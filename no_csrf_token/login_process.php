@@ -13,7 +13,6 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
         // セッションにユーザー名を保存
         $_SESSION['username'] = $username;
         echo 'ログイン成功!';
-        echo session_id();
         echo '<br><a href="profile.php">プロフィールページ</a>';
     } else {
         echo 'ユーザー名またはパスワードが違います';

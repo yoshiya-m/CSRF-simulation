@@ -12,7 +12,6 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 // ログインしていない場合は、ログイン求める
 if (!isset($_SESSION['username'])) {
-    echo session_id();
     $message = "投稿するにはログインする必要があります。\n";
     echo $message;
     exit;
