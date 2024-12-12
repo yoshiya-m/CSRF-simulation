@@ -13,22 +13,22 @@ CSRF対策はCSRF TOKENの使用のみで、ある場合とない場合の比較
 
 ## 手順
 1. リポジトリのクローン
- - git clone https://github.com/yoshiya-m/CSRF-simulation.git
+ - `git clone https://github.com/yoshiya-m/CSRF-simulation.git`
 2. PHPのインストール
- - sudo apt update
- - sudo apt install php
+ - `sudo apt update`
+ - `sudo apt install php`
 3. CSRF-SIMULATIONディレクトリ配下に移動
 4. コマンドで3つPHPサーバを立てる
- - php -S localhost:8000 -t bad-site/
- - php -S localhost:9000 -t no_csrf_token/
- - php -S localhost:10000 -t csrf_token/
+ - `php -S localhost:8000 -t bad-site/`
+ - `php -S localhost:9000 -t no_csrf_token/`
+ - `php -S localhost:10000 -t csrf_token/`
 5. まずはCSRF対策なしのサイトでログイン
- - http://localhost:9000 にブラウザでアクセス
+ - `http://localhost:9000` にブラウザでアクセス
  - ユーザ名とパスワード欄に 「test」 を入力してログイン
 6. CSRF攻撃を行うサイトにアクセスする
- - http://localhost:8000/to-9000.php にブラウザでアクセス
- - CSRFが成功するとhttp://localhost:9000/profile.phpに遷移
+ - `http://localhost:8000/to-9000.php` にブラウザでアクセス
+ - `CSRFが成功するとhttp://localhost:9000/profile.php` に遷移
  - 失敗の場合は、再度手順 5 を行う
 
- 
+
 
