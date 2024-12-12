@@ -3,10 +3,20 @@
 # 概要
 CSRF(cross-site request forgery)をローカル環境で発生させる。
 CSRFはフォームの自動送信によって行い、フォーム内のCSRF TOKENあり・なしで比較する。
-ローカルで３ポート(8000: 攻撃元サイト, 9000: CSRF TOKENなしサイト, 10000: CSRF TOKEN ありサイト)を使用する。
+ローカルで３ポート(8000: 攻撃元サイト, 9000: CSRF TOKENなしサイト, 10000: CSRF TOKEN ありサイト)を使用し、サイトにログインしてセッション情報をcookieに保持させてからCSRFを実行する。
 <br>
 
 ## DEMO
+ - CSRF TOKENなしのサイトの場合、ログインに悪意あるサイトにアクセスすると投稿一覧に勝手に投稿される
+
+![image](https://github.com/user-attachments/assets/888b6f1e-8a54-43d3-afdb-16cc5d8c35e7)
+![image](https://github.com/user-attachments/assets/1a07a51f-2ff2-440b-bfcf-fd9073cd19db)
+<br>
+
+- CSRF TOKENありのサイトの場合、悪意あるサイトにアクセスしてもCSRF TOKENが無いため投稿が拒否される
+![image](https://github.com/user-attachments/assets/888b6f1e-8a54-43d3-afdb-16cc5d8c35e7)
+![image](https://github.com/user-attachments/assets/52ff1607-298a-4c07-b296-8b5ec70f501d)
+
 
 
 <br>
