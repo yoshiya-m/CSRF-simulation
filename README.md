@@ -2,7 +2,11 @@
 
 # 概要
 CSRF(cross-site request forgery)をローカル環境で発生させる。
-CSRF対策はCSRF TOKENの使用のみで、TOKENがある場合とない場合の比較をする。
+CSRFはフォームの自動送信によって行い、フォーム内のCSRF TOKENあり・なしで比較する。
+ローカルで３ポート(8000: 攻撃元サイト, 9000: CSRF TOKENなしサイト, 10000: CSRF TOKEN ありサイト)を使用する。
+<br>
+
+## DEMO
 
 
 <br>
